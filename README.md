@@ -5,7 +5,7 @@
 [![Documentation](https://github.com/GraphicalPlayground/.github/blob/main/assets/cta/cta-documentation.svg)](https://docs.graphical-playground.com)
 [![Learn about Licensing](https://github.com/GraphicalPlayground/.github/blob/main/assets/cta/cta-learn-licensing.svg)](https://graphical-playground.com/licensing)
 
-# [@graphical-playground](https://github.com/GraphicalPlayground)/{{GP_REPO_NAME}}
+# [@GraphicalPlayground](https://github.com/GraphicalPlayground)/{{GP_REPO_NAME}}
 <!-- gp:protected:start -->
 
 <!-- gp:protected:end -->
