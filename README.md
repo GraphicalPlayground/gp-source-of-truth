@@ -6,20 +6,9 @@
 [![Learn about Licensing](https://github.com/GraphicalPlayground/.github/blob/main/assets/cta/cta-learn-licensing.svg)](https://graphical-playground.com/licensing)
 
 # [@graphical-playground](https://github.com/GraphicalPlayground)/{{GP_REPO_NAME}}
-
 <!-- gp:protected:start -->
 
 <!-- gp:protected:end -->
-## Documentation
-
-Comprehensive documentation for `{{GP_REPO_NAME}}` is hosted on our main documentation portal. Whether you
-are building your first triangle or writing a custom features, our guides are designed to support your
-experimentation.
-
-- [**Main Documentation Portal**](https://docs.graphical-playground.com)
-- [**Engine Introduction**](https://docs.graphical-playground.com/docs/engine/intro)
-- [**API Introduction**](https://docs.graphical-playground.com/docs/api/intro)
-
 ## Contributing
 
 We welcome contributions from everybody! Whether you are fixing a bug, implementing a new features,
