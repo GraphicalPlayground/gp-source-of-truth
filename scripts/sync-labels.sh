@@ -53,7 +53,8 @@ for REPO in "${REPOS[@]}"; do
     echo "========================================"
     echo "Synchronizing labels for: $REPO"
 
-    readarray -t CURRENT_LABELS < <(gh label list --repo "$REPO" --limit 500 --json name --jq '.[].name')
+    CURRENT_LABELS_JSON=$(gh label list --repo "$REPO" --limit 500 --json name,color,description)
+    readarray -t CURRENT_LABELS < <(echo "$CURRENT_LABELS_JSON" | jq -r '.[].name')
 
     if [[ "$CLEAR_FIRST" == true ]]; then
         echo "  [!] Clearing all existing labels..."
@@ -85,9 +86,21 @@ for REPO in "${REPOS[@]}"; do
         COLOR=$(echo "$label" | jq -r '.color | sub("^#"; "")')
         DESC=$(echo "$label" | jq -r '.description // ""')
 
+        EXISTING=$(echo "$CURRENT_LABELS_JSON" | jq -c --arg name "$NAME" 'map(select(.name == $name)) | first // empty')
+
+        if [[ -n "$EXISTING" ]]; then
+            EXISTING_COLOR=$(echo "$EXISTING" | jq -r '.color')
+            EXISTING_DESC=$(echo "$EXISTING" | jq -r '.description // ""')
+
+            if [[ "$EXISTING_COLOR" == "$COLOR" && "$EXISTING_DESC" == "$DESC" ]]; then
+                echo "      Skipped (unchanged): '$NAME'"
+                continue
+            fi
+        fi
+
         set +e
         gh label create "$NAME" --repo "$REPO" --color "$COLOR" --description "$DESC" --force >/dev/null 2>&1
-        
+
         if [[ $? -eq 0 ]]; then
             echo "      Synced: '$NAME'"
         else

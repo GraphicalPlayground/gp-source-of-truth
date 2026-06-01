@@ -136,3 +136,6 @@
 - name: "topic:tests"
   color: "#ecff77"
   description: "Involves unit or integration tests"
+- name: "topic:maths"
+  color: "#ecff77"
+  description: "Involves math libraries, algorithms, or calculations"
