@@ -1,0 +1,62 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Mails Configuration Schema",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "URL to the JSON schema for this configuration"
+    },
+    "organization": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The name of the email recipient"
+          },
+          "email": {
+            "type": "string",
+            "format": "email",
+            "description": "The email address of the recipient"
+          },
+          "purpose": {
+            "type": "string",
+            "description": "The purpose of the email (e.g., 'support', 'info', 'contact')"
+          }
+        },
+        "required": ["name", "email", "purpose"],
+        "additionalProperties": false
+      }
+    },
+    "maintainers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The name of the maintainer"
+          },
+          "pseudo": {
+            "type": "string",
+            "description": "The pseudonym of the maintainer"
+          },
+          "emails": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "email",
+              "description": "The email address of the maintainer"
+            }
+          }
+        },
+        "required": ["pseudo", "name", "emails"],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": ["organization", "maintainers"],
+  "additionalProperties": false
+}

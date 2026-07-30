@@ -1,0 +1,8 @@
+{
+  "$schema": "../schemas/funding.schema.json",
+  "buy_me_a_coffee": "GraphicalPlayground",
+  "open_collective": "graphical-playground",
+  "thanks_dev": "u/gh/GraphicalPlayground",
+  "github": "GraphicalPlayground",
+  "custom": "https://graphical-playground.com/donate"
+}

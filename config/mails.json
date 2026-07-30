@@ -1,0 +1,78 @@
+{
+  "$schema": "../schemas/mails.schema.json",
+  "organization": [
+    {
+      "name": "Legal Team",
+      "email": "legal@graphical-playground.com",
+      "purpose": "legal"
+    },
+    {
+      "name": "Support Team",
+      "email": "support@graphical-playground.com",
+      "purpose": "support"
+    },
+    {
+      "name": "Security Team",
+      "email": "security@graphical-playground.com",
+      "purpose": "security"
+    },
+    {
+      "name": "Sponsorship Team",
+      "email": "sponsor@graphical-playground.com",
+      "purpose": "sponsorship"
+    },
+    {
+      "name": "Marketing Team",
+      "email": "marketing@graphical-playground.com",
+      "purpose": "marketing"
+    },
+    {
+      "name": "Press Team",
+      "email": "press@graphical-playground.com",
+      "purpose": "press"
+    }
+  ],
+  "maintainers": [
+    {
+      "name": "Mallory Scotton",
+      "pseudo": "Mallow",
+      "emails": [
+        "mallory.scotton@graphical-playground.com",
+        "mscotton.pro@gmail.com",
+        "mallory.scotton@epitech.eu"
+      ]
+    },
+    {
+      "name": "Hugo Cathelain",
+      "pseudo": "Zud4rk",
+      "emails": [
+        "hugo.cathelain@graphical-playground.com",
+        "hugo.cathelain@epitech.eu"
+      ]
+    },
+    {
+      "name": "Raphaël Ostier",
+      "pseudo": "Bombabobo",
+      "emails": [
+        "raphael.ostier@graphical-playground.com",
+        "raphael.ostier@epitech.eu"
+      ]
+    },
+    {
+      "name": "Ossan Msoili",
+      "pseudo": "Omegalpha28",
+      "emails": [
+        "ossan.msoili@graphical-playground.com",
+        "ossan.msoili@epitech.eu"
+      ]
+    },
+    {
+      "name": "Nathan Fievet",
+      "pseudo": "Nathan",
+      "emails": [
+        "nathan.fievet@graphical-playground.com",
+        "nathan.fievet@epitech.eu"
+      ]
+    }
+  ]
+}

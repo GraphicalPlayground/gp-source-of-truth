@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "URLs Configuration Schema",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Path or URL to the JSON schema"
+    }
+  },
+  "propertyNames": {
+    "enum": [
+      "$schema",
+      "homepage",
+      "documentation",
+      "blog",
+      "community",
+      "support",
+      "security",
+      "terms",
+      "privacy",
+      "eula"
+    ]
+  },
+  "required": [
+    "$schema",
+    "homepage",
+    "documentation",
+    "blog",
+    "community",
+    "support",
+    "security",
+    "terms",
+    "privacy",
+    "eula"
+  ],
+  "additionalProperties": {
+    "type": "string",
+    "format": "uri"
+  }
+}

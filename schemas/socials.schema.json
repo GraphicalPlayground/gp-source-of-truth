@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Socials Configuration Schema",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Path or URL to the JSON schema"
+    }
+  },
+  "propertyNames": {
+    "enum": [
+      "$schema",
+      "discord",
+      "github",
+      "linkedin",
+      "twitter",
+      "youtube",
+      "twitch",
+      "mastodon",
+      "instagram",
+      "facebook",
+      "tiktok",
+      "reddit",
+      "snapchat",
+      "telegram",
+      "whatsapp",
+      "medium",
+      "devto"
+    ]
+  },
+  "additionalProperties": {
+    "type": "string",
+    "format": "uri"
+  }
+}

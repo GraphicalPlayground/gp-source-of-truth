@@ -1,0 +1,6 @@
+{
+  "$schema": "../schemas/socials.schema.json",
+  "discord": "https://discord.graphical-playground.com",
+  "github": "https://github.com/GraphicalPlayground",
+  "linkedin": "https://linkedin.com/company/graphical-playground"
+}
