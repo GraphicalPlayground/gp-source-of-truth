@@ -20,7 +20,9 @@
   },
   "dependencies": {
     "@actions/github": "^9.1.1",
-    "handlebars": "^4.7.9"
+    "@octokit/core": "^7.0.6",
+    "handlebars": "^4.7.9",
+    "octokit-plugin-create-pull-request": "^6.0.1"
   },
   "devDependencies": {
     "@types/node": "^26.1.2",
