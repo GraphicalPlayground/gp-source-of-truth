@@ -8,27 +8,31 @@
       "description": "URL to the JSON schema for this configuration"
     },
     "organization": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "description": "The name of the email recipient"
-          },
-          "email": {
-            "type": "string",
-            "format": "email",
-            "description": "The email address of the recipient"
-          },
-          "purpose": {
-            "type": "string",
-            "description": "The purpose of the email (e.g., 'support', 'info', 'contact')"
-          }
-        },
-        "required": ["name", "email", "purpose"],
-        "additionalProperties": false
-      }
+      "type": "object",
+      "propertyNames": {
+        "enum": [
+          "support",
+          "contact",
+          "security",
+          "marketing",
+          "legal",
+          "sponsorship",
+          "press"
+        ]
+      },
+      "additionalProperties": {
+        "type": "string",
+        "format": "email"
+      },
+      "required": [
+        "support",
+        "contact",
+        "security",
+        "marketing",
+        "legal",
+        "sponsorship",
+        "press"
+      ]
     },
     "maintainers": {
       "type": "array",

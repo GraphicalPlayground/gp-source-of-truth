@@ -1,37 +1,14 @@
 {
   "$schema": "../schemas/mails.schema.json",
-  "organization": [
-    {
-      "name": "Legal Team",
-      "email": "legal@graphical-playground.com",
-      "purpose": "legal"
-    },
-    {
-      "name": "Support Team",
-      "email": "support@graphical-playground.com",
-      "purpose": "support"
-    },
-    {
-      "name": "Security Team",
-      "email": "security@graphical-playground.com",
-      "purpose": "security"
-    },
-    {
-      "name": "Sponsorship Team",
-      "email": "sponsor@graphical-playground.com",
-      "purpose": "sponsorship"
-    },
-    {
-      "name": "Marketing Team",
-      "email": "marketing@graphical-playground.com",
-      "purpose": "marketing"
-    },
-    {
-      "name": "Press Team",
-      "email": "press@graphical-playground.com",
-      "purpose": "press"
-    }
-  ],
+  "organization": {
+    "support": "support@graphical-playground.com",
+    "contact": "contact@graphical-playground.com",
+    "security": "security@graphical-playground.com",
+    "marketing": "marketing@graphical-playground.com",
+    "legal": "legal@graphical-playground.com",
+    "sponsorship": "sponsorship@graphical-playground.com",
+    "press": "press@graphical-playground.com"
+  },
   "maintainers": [
     {
       "name": "Mallory Scotton",

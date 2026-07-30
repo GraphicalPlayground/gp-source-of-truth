@@ -3,13 +3,22 @@
 // mailto:support AT graphical-playground DOT com
 
 /**
- * @brief Configuration type for organization emails.
+ * @brief List of organization mail types.
  */
-export type OrganizationMailConfig = {
-  name: string;
-  email: string;
-  purpose: string;
-};
+export const organizationMailTypes = [
+  "support",
+  "contact",
+  "security",
+  "marketing",
+  "legal",
+  "sponsorship",
+  "press"
+] as const;
+
+/**
+ * @brief Type of organization mail types.
+ */
+export type OrganizationMailType = typeof organizationMailTypes[number];
 
 /**
  * @brief Configuration type for maintainers emails.
@@ -24,6 +33,8 @@ export type MaintainersMailConfig = {
  * @brief Configuration type for emails.
  */
 export type MailsConfig = {
-  organization: OrganizationMailConfig[];
+  organization: {
+    [K in OrganizationMailType]: string;
+  };
   maintainers: MaintainersMailConfig[];
 };
