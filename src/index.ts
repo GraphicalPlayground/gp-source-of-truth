@@ -4,12 +4,11 @@
 
 import fs from 'node:fs';
 import Handlebars from 'handlebars';
+import { helpers } from './helpers';
 
-Handlebars.registerHelper('simplifyUrl', function (url: unknown): string {
-  if (typeof url !== 'string' || !url) {
-    return '';
-  }
-  return url.replace(/^(?:https?:\/\/)?(?:www\.)?/i, '');
+// Registers all helper functions with Handlebars.
+Object.keys(helpers).forEach((helper) => {
+  Handlebars.registerHelper(helper, helpers[helper]);
 });
 
 const templateSource = fs.readFileSync('test.hbs', 'utf8');
