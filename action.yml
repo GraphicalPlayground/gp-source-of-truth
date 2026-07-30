@@ -1,0 +1,65 @@
+# Copyright (c) - Graphical Playground. All rights reserved.
+# For more information, see https://graphical-playground/legal
+# mailto:support AT graphical-playground DOT com
+
+name: SOT
+description: SOT
+
+branding:
+  icon: download-cloud
+  color: blue
+
+inputs:
+  source-repository:
+    description: The repository to synchronize from
+    required: true
+  source-branch:
+    description: The branch to synchronize from
+    default: main
+  source-token:
+    description: The token to use for accessing the source repository
+    required: true
+  target-repository:
+    description: The repository to synchronize to
+    required: true
+  target-branch:
+    description: The branch to synchronize to
+    default: main
+  configuration-file:
+    description: The path to the configuration file that defines the synchronization rules
+    default: .github/source-of-truth.yml
+
+outputs:
+  pull-request-url:
+    value: ${{ steps.sync.outputs.pull-request-url }}
+    description: The URL of the pull request created by this action
+  synced-files-count:
+    value: ${{ steps.sync.outputs.synced-files-count }}
+    description: The number of files that were synchronized by this action
+  skipped-files-count:
+    value: ${{ steps.sync.outputs.skipped-files-count }}
+    description: The number of files that were skipped during synchronization
+
+runs:
+  using: composite
+  steps:
+    - name: Checkout Source of Truth
+      uses: actions/checkout@v7
+      with:
+        repository: ${{ inputs.source-repository }}
+        ref: ${{ inputs.source-branch }}
+        token: ${{ inputs.source-token }}
+        path: source-of-truth
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v7
+      with:
+        node-version: 24
+        cache: 'npm'
+
+    - name: Synchronize Files
+      id: sync
+      shell: bash
+      env:
+        GITHUB_TOKEN: ${{ inputs.target-token }}
+      run: npm run run:ci
