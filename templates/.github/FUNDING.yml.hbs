@@ -1,0 +1,9 @@
+# .github/FUNDING.yml
+
+{{#each funding}}
+  {{#if (isArray this)}}
+{{ @key }}: [{{#each this}}'{{ this }}'{{#unless @last}}, {{/unless}}{{/each}}]
+  {{else}}
+{{ @key }}: '{{ this }}'
+  {{/if}}
+{{/each}}
