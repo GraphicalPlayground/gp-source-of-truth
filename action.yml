@@ -71,15 +71,17 @@ runs:
       with:
         node-version: 24
         cache: 'npm'
+        cache-dependency-path: source-of-truth/package-lock.json
 
     - name: Synchronize Files
       id: sync
       shell: bash
+      working-directory: source-of-truth
       env:
         GITHUB_TOKEN: ${{ inputs.target-token }}
         TARGET_REPOSITORY: ${{ inputs.target-repository }}
         TARGET_BRANCH: ${{ inputs.target-branch }}
-        TARGET_DIR: target-repository
+        TARGET_DIR: ${{ github.workspace }}/target-repository
         CONFIGURATION_FILE: ${{ inputs.configuration-file }}
         BOT_NAME: ${{ inputs.bot-name }}
         BOT_EMAIL: ${{ inputs.bot-email }}
