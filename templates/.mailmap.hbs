@@ -23,9 +23,13 @@
 # Please keep this file sorted.
 
 # Graphical Playground General Contacts
-{{ mailmap.organization_contacts }}
+{{#each mails.organization }}
+Graphical Playground {{ toPascalCase @key }} <{{ this }}>
+{{/each}}
 
 # Graphical Playground Team Contacts
-{{ mailmap.team_contacts }}
+{{#each mails.maintainers }}
+{{ name }}{{#each emails }} <{{ this }}>{{/each }}
+{{/each}}
 
 # Contributors
