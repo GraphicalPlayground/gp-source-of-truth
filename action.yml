@@ -25,9 +25,16 @@ inputs:
   target-branch:
     description: The branch to synchronize to
     default: main
+  target-token:
+    description: The token to use for accessing the target repository
+    required: true
   configuration-file:
     description: The path to the configuration file that defines the synchronization rules
     default: .github/source-of-truth.yml
+  bot-name:
+    description: The display name used as the author of commits/PRs created by this action
+  bot-email:
+    description: The email address used as the author of commits/PRs created by this action
 
 outputs:
   pull-request-url:
@@ -51,6 +58,14 @@ runs:
         token: ${{ inputs.source-token }}
         path: source-of-truth
 
+    - name: Checkout Target Repository
+      uses: actions/checkout@v7
+      with:
+        repository: ${{ inputs.target-repository }}
+        ref: ${{ inputs.target-branch }}
+        token: ${{ inputs.target-token }}
+        path: target-repository
+
     - name: Setup Node.js
       uses: actions/setup-node@v7
       with:
@@ -62,4 +77,10 @@ runs:
       shell: bash
       env:
         GITHUB_TOKEN: ${{ inputs.target-token }}
+        TARGET_REPOSITORY: ${{ inputs.target-repository }}
+        TARGET_BRANCH: ${{ inputs.target-branch }}
+        TARGET_DIR: target-repository
+        CONFIGURATION_FILE: ${{ inputs.configuration-file }}
+        BOT_NAME: ${{ inputs.bot-name }}
+        BOT_EMAIL: ${{ inputs.bot-email }}
       run: npm run run:ci

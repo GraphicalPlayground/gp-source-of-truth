@@ -3,31 +3,67 @@
 // mailto:support AT graphical-playground DOT com
 
 import fs from 'node:fs';
+import path from 'node:path';
 import Handlebars from 'handlebars';
 import { helpers } from './helpers';
 import { loadConfig } from './config';
-import path from 'node:path';
+import { loadParameters } from './parameters';
+import { buildOutputFiles } from './sync';
+import { syncPullRequest, type BotIdentity } from './github';
+import { CONFIG_DIR } from './constants';
 
 // Registers all helper functions with Handlebars.
 Object.keys(helpers).forEach((helper) => {
   Handlebars.registerHelper(helper, helpers[helper]);
 });
 
-// Load the configuration from the specified directory.
-const config = loadConfig(path.resolve('config'));
+/**
+ * @brief Sets a GitHub Actions step output, if running inside a workflow.
+ */
+function setActionOutput(name: string, value: string | number): void {
+  const outputFile = process.env.GITHUB_OUTPUT;
 
-const templateSource = fs.readFileSync('test.hbs', 'utf8');
-const template = Handlebars.compile(templateSource);
+  if (outputFile) {
+    fs.appendFileSync(outputFile, `${name}=${value}\n`);
+  }
+}
 
-// 2. Inject context (e.g. GitHub actions environment variables)
-const rendered = template({
-  github: {
-    repository: process.env.GITHUB_REPOSITORY || 'my-org/my-repo',
-    owner: process.env.GITHUB_REPOSITORY_OWNER || 'my-org'
-  },
-  overridden_content: 'This section is unique to this repository.',
-  ...config
-});
+async function run(): Promise<void> {
+  const targetDir = path.resolve(process.env.TARGET_DIR ?? 'target-repository');
+  const targetRepository = process.env.TARGET_REPOSITORY;
+  const targetBranch = process.env.TARGET_BRANCH ?? 'main';
+  const configurationFile = process.env.CONFIGURATION_FILE;
+  const githubToken = process.env.GITHUB_TOKEN;
+  const botName = process.env.BOT_NAME;
+  const botEmail = process.env.BOT_EMAIL;
+  const botIdentity: BotIdentity | undefined = botName && botEmail ? { name: botName, email: botEmail } : undefined;
 
-// 3. Write final output
-fs.writeFileSync('tests.md', rendered);
+  if (!targetRepository) {
+    throw new Error('Missing required environment variable: TARGET_REPOSITORY');
+  }
+
+  const orgConfig = loadConfig(CONFIG_DIR);
+  const parameters = loadParameters(targetDir, configurationFile);
+  const outputFiles = buildOutputFiles(targetDir, targetRepository, orgConfig, parameters);
+
+  let result = { pullRequestUrl: null as string | null, syncedFilesCount: 0, skippedFilesCount: 0 };
+
+  if (githubToken) {
+    result = await syncPullRequest(targetDir, targetRepository, targetBranch, outputFiles, githubToken, botIdentity);
+  } else {
+    console.log('Skipping pull request creation: no GITHUB_TOKEN set.');
+  }
+
+  for (const [relativePath, content] of Object.entries(outputFiles)) {
+    const fullPath = path.join(targetDir, relativePath);
+
+    fs.mkdirSync(path.dirname(fullPath), { recursive: true });
+    fs.writeFileSync(fullPath, content);
+  }
+
+  setActionOutput('pull-request-url', result.pullRequestUrl ?? '');
+  setActionOutput('synced-files-count', result.syncedFilesCount);
+  setActionOutput('skipped-files-count', result.skippedFilesCount);
+}
+
+run();

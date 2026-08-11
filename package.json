@@ -13,8 +13,8 @@
     "url": "https://github.com/GraphicalPlayground/gp-source-of-truth"
   },
   "scripts": {
-    "run": "tsx src/index.ts",
-    "run:ci": "npm install && npx tsx src/index.ts",
+    "run": "tsx --env-file-if-exists=.env src/index.ts",
+    "run:ci": "npm install && npx tsx --env-file-if-exists=.env src/index.ts",
     "format": "prettier --check .",
     "format:fix": "prettier --write ."
   },
@@ -22,7 +22,8 @@
     "@actions/github": "^9.1.1",
     "@octokit/core": "^7.0.6",
     "handlebars": "^4.7.9",
-    "octokit-plugin-create-pull-request": "^6.0.1"
+    "octokit-plugin-create-pull-request": "^6.0.1",
+    "yaml": "^2.9.0"
   },
   "devDependencies": {
     "@types/node": "^26.1.2",
