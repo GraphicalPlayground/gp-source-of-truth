@@ -5,9 +5,9 @@ abstract: "An open-source platform and hybrid ecosystem dedicated to learning mo
 authors:
   - name: "The Graphical Playground Team"
     address: "Lyon, France"
-    email: "support@graphical-playground.com"
+    email: "{{ mails.organization.support }}"
     affiliation: "Graphical Playground"
 type: "software"
 repository-code: "https://github.com/{{ github.repo.owner }}/{{ github.repo.repo }}"
-url: "https://graphical-playground.com"
+url: {{ urls.homepage }}
 license: {{ config.license }}
