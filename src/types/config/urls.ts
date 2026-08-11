@@ -1,5 +1,5 @@
 // Copyright (c) - Graphical Playground. All rights reserved.
-// For more information, see https://graphical-playground/legal
+// For more information, see https://graphical-playground.com/legal
 // mailto:support AT graphical-playground DOT com
 
 /**
@@ -11,6 +11,7 @@ export const mandatoryUrls = [
   'blog',
   'community',
   'support',
+  'legal',
   'security',
   'terms',
   'privacy',

@@ -16,8 +16,15 @@
           "security",
           "marketing",
           "legal",
-          "sponsorship",
-          "press"
+          "sponsor",
+          "press",
+          "billing",
+          "feedback",
+          "partnerships",
+          "accessibility",
+          "abuse",
+          "careers",
+          "privacy"
         ]
       },
       "additionalProperties": {
@@ -30,8 +37,15 @@
         "security",
         "marketing",
         "legal",
-        "sponsorship",
-        "press"
+        "sponsor",
+        "press",
+        "billing",
+        "feedback",
+        "partnerships",
+        "accessibility",
+        "abuse",
+        "careers",
+        "privacy"
       ]
     },
     "maintainers": {

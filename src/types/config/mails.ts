@@ -1,24 +1,30 @@
 // Copyright (c) - Graphical Playground. All rights reserved.
-// For more information, see https://graphical-playground/legal
+// For more information, see https://graphical-playground.com/legal
 // mailto:support AT graphical-playground DOT com
 
 /**
  * @brief List of organization mail types.
  */
 export const organizationMailTypes = [
-  "support",
-  "contact",
-  "security",
-  "marketing",
-  "legal",
-  "sponsorship",
-  "press"
+  'support',
+  'contact',
+  'security',
+  'marketing',
+  'legal',
+  'sponsor',
+  'press',
+  'partnerships',
+  'feedback',
+  'accessibility',
+  'abuse',
+  'careers',
+  'privacy'
 ] as const;
 
 /**
  * @brief Type of organization mail types.
  */
-export type OrganizationMailType = typeof organizationMailTypes[number];
+export type OrganizationMailType = (typeof organizationMailTypes)[number];
 
 /**
  * @brief Configuration type for maintainers emails.

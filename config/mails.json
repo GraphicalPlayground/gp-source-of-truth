@@ -6,8 +6,15 @@
     "security": "security@graphical-playground.com",
     "marketing": "marketing@graphical-playground.com",
     "legal": "legal@graphical-playground.com",
-    "sponsorship": "sponsorship@graphical-playground.com",
-    "press": "press@graphical-playground.com"
+    "sponsor": "sponsor@graphical-playground.com",
+    "press": "press@graphical-playground.com",
+    "billing": "billing@graphical-playground.com",
+    "partnerships": "partnerships@graphical-playground.com",
+    "feedback": "feedback@graphical-playground.com",
+    "accessibility": "accessibility@graphical-playground.com",
+    "abuse": "abuse@graphical-playground.com",
+    "careers": "careers@graphical-playground.com",
+    "privacy": "privacy@graphical-playground.com"
   },
   "maintainers": [
     {
