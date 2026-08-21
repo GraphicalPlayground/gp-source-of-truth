@@ -18,6 +18,11 @@ export interface LocaleMetadata {
    * @brief The fully-punctuated leading phrase for this locale's own row (emoji included).
    */
   label: string;
+
+  /**
+   * @brief Add custom localized strings for this locale, e.g. "Direct donation" in the target language.
+   */
+  localization: Record<string, string>;
 }
 
 /**

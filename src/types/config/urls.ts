@@ -2,6 +2,8 @@
 // For more information, see https://graphical-playground.com/legal
 // mailto:support AT graphical-playground DOT com
 
+import { Loose } from '../loose';
+
 /**
  * @brief List of mandatory URLs for the project.
  */
@@ -15,7 +17,8 @@ export const mandatoryUrls = [
   'security',
   'terms',
   'privacy',
-  'eula'
+  'eula',
+  'cdn'
 ] as const;
 
 /**
@@ -27,5 +30,5 @@ export type MandatoryUrls = (typeof mandatoryUrls)[number];
  * @brief Configuration type for URLs in the projects.
  */
 export type UrlsConfig = {
-  [key in MandatoryUrls]: string;
+  [key in Loose<MandatoryUrls>]: string;
 };

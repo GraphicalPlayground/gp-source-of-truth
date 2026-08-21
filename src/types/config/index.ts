@@ -13,12 +13,14 @@ import type { UrlsConfig } from './urls';
  * @property mails - The mails configuration.
  * @property socials - The socials configuration.
  * @property urls - The URLs configuration.
+ * @property keymap - A record mapping keys to their corresponding values.
  */
 export interface Config {
   funding: FundingConfig;
   mails: MailsConfig;
   socials: SocialsConfig;
   urls: UrlsConfig;
+  keymap: Record<string, string>;
 }
 
 export type { FundingConfig, MailsConfig, SocialsConfig, UrlsConfig };

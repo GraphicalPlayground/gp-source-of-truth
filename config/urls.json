@@ -9,5 +9,11 @@
   "privacy": "https://graphical-playground.com/legal/privacy-policy",
   "security": "https://graphical-playground.com/legal/security-policy",
   "support": "https://graphical-playground.com/support",
-  "terms": "https://graphical-playground.com/legal/terms-of-service"
+  "terms": "https://graphical-playground.com/legal/terms-of-service",
+  "cdn": "https://github.com/GraphicalPlayground/.github/blob/main",
+  "donate": "https://graphical-playground.com/donate",
+  "sponsors": "https://graphical-playground.com/sponsors",
+  "discussions": "https://github.com/orgs/GraphicalPlayground/discussions",
+  "licensing": "https://graphical-playground.com/licensing",
+  "handbook": "https://handbook.graphical-playground.com"
 }

@@ -17,12 +17,14 @@ export function loadConfig(configDir: string): Config {
   const mailsConfigPath = path.join(configDir, 'mails.json');
   const socialsConfigPath = path.join(configDir, 'socials.json');
   const urlsConfigPath = path.join(configDir, 'urls.json');
+  const keymapConfigPath = path.join(configDir, 'keymap.json');
 
   // Read and parse each configuration file
   const fundingConfig: Config['funding'] = JSON.parse(fs.readFileSync(fundingConfigPath, 'utf-8'));
   const mailsConfig: Config['mails'] = JSON.parse(fs.readFileSync(mailsConfigPath, 'utf-8'));
   const socialsConfig: Config['socials'] = JSON.parse(fs.readFileSync(socialsConfigPath, 'utf-8'));
   const urlsConfig: Config['urls'] = JSON.parse(fs.readFileSync(urlsConfigPath, 'utf-8'));
+  const keymapConfig: Config['keymap'] = JSON.parse(fs.readFileSync(keymapConfigPath, 'utf-8'));
 
   // Delete '$schema' property from each config object if it exists
   delete (fundingConfig as any).$schema;
@@ -35,6 +37,7 @@ export function loadConfig(configDir: string): Config {
     funding: fundingConfig,
     mails: mailsConfig,
     socials: socialsConfig,
-    urls: urlsConfig
+    urls: urlsConfig,
+    keymap: keymapConfig
   };
 }

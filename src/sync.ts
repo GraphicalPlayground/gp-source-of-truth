@@ -126,7 +126,7 @@ export function buildOutputFiles(
 
       output[outputPath] = render(templatePath, outputPath, targetDir, {
         ...context,
-        i18n: { alternatives }
+        i18n: { alternatives, localization: localesMetadata[locale].localization }
       });
     }
   }
