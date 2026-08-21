@@ -9,19 +9,7 @@
     }
   },
   "propertyNames": {
-    "enum": [
-      "$schema",
-      "homepage",
-      "documentation",
-      "blog",
-      "community",
-      "support",
-      "legal",
-      "security",
-      "terms",
-      "privacy",
-      "eula"
-    ]
+    "type": "string"
   },
   "required": [
     "$schema",
@@ -34,7 +22,8 @@
     "security",
     "terms",
     "privacy",
-    "eula"
+    "eula",
+    "cdn"
   ],
   "additionalProperties": {
     "type": "string",
