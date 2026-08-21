@@ -1,0 +1,118 @@
+![Graphical Playground - Engine]({{ urls.cdn }}/assets/banners/{{ github.repo.repo }}.svg)
+
+[![Explore the Platform]({{ urls.cdn }}/assets/cta/cta-explore-platform.svg)]({{ urls.homepage }})
+[![Read the Handbook]({{ urls.cdn }}/assets/cta/cta-read-handbook.svg)]({{ urls.handbook }})
+[![Documentation]({{ urls.cdn }}/assets/cta/cta-documentation.svg)]({{ urls.documentation }})
+[![Learn about Licensing]({{ urls.cdn }}/assets/cta/cta-learn-licensing.svg)]({{ urls.licensing }})
+
+# [@GraphicalPlayground](https://github.com/GraphicalPlayground)/{{ github.repo.repo }}
+
+{{ i18n.alternatives }}
+
+{{{ customContent }}}
+
+## Contributing
+
+We welcome contributions from everybody! Whether you are fixing a bug, implementing a new features,
+or improving our documentation, your help is appreciated. Please see our full
+[CONTRIBUTING.md](./CONTRIBUTING.md) guide for detailed information on our standards and the pull
+request review process.
+
+### Code of Conduct
+
+To ensure a welcoming, collaborative, and inclusive environment for everyone learning and
+building within the Graphical Playground ecosystem, all contributors and participants are
+expected to adhere to our [Code of Conduct](./CODE_OF_CONDUCT.md). Please review it before engaging
+in community discussions or submitting code.
+
+### Security
+
+If you discover a security vulnerability within `{{ github.repo.repo }}`, please do not report
+it by opening a public issue. Instead, refer to our [Security Policy](./SECURITY.md) for
+instructions on how to securely disclose the vulnerability to the maintainers.
+
+### License
+
+`{{ github.repo.repo }}` is open-source software. Please see the [LICENSE.md](./LICENSE.md) file in the root
+directory for full terms regarding modification, distribution, and use in your own projects.
+
+### Donations
+
+If you find `{{ github.repo.repo }}` helpful for your learning, academic research, or game development journey,
+please consider supporting the project. Maintaining a modern C++ graphics engine takes
+significant time and resources!
+
+You can sponsor the Graphical Playground project through the following links:
+
+{{#if funding.buy_me_a_coffee }}
+- [**Buy Me A Coffee**](https://www.buymeacoffee.com/{{ funding.buy_me_a_coffee }})
+{{/if}}
+{{#if funding.github }}
+  {{#if (isArray funding.github) }}
+- **GitHub Sponsors**:
+    {{#each funding.github }}
+  - [**{{ this }}**](https://github.com/sponsors/{{ this }})
+    {{/each}}
+  {{else}}
+- [**GitHub Sponsors**](https://github.com/sponsors/{{ funding.github }})
+  {{/if}}
+{{/if}}
+{{#if funding.open_collective}}
+- [**Open Collective**](https://opencollective.com/{{ funding.open_collective }})
+{{/if}}
+{{#if funding.thanks_dev }}
+- [**Thanks Dev**](https://thanks.dev/{{ funding.thanks_dev }})
+{{/if}}
+{{#if funding.patreon }}
+- [**Patreon**](https://www.patreon.com/{{ funding.patreon }})
+{{/if}}
+{{#if funding.ko_fi }}
+- [**Ko-fi**](https://ko-fi.com/{{ funding.ko_fi }})
+{{/if}}
+{{#if funding.issuehunt }}
+- [**IssueHunt**](https://issuehunt.io/r/{{ funding.issuehunt }})
+{{/if}}
+{{#if funding.liberapay }}
+- [**Liberapay**](https://liberapay.com/{{ funding.liberapay }})
+{{/if}}
+{{#if funding.tidelift }}
+- [**Tidelift**](https://tidelift.com/subscription/pkg/npm-{{ funding.tidelift }})
+{{/if}}
+{{#if funding.polar }}
+- [**Polar**](https://polar.sh/{{ funding.polar }})
+{{/if}}
+{{#if funding.custom }}
+  {{#if (isArray funding.custom) }}
+- **{{ i18n.localization.direct-donation }}**:
+    {{#each funding.custom }}
+  - [**{{ this }}**]({{ this }})
+    {{/each}}
+  {{else}}
+- [**{{ i18n.localization.direct-donation }}**]({{ funding.custom }})
+  {{/if}}
+{{/if}}
+
+You can see the full list of sponsors and supporters on our
+[Sponsors Page]({{ urls.sponsors }}) or in [DONORS.md](./DONORS.md).
+Your support helps us continue to develop high-quality educational resources and maintain the engine
+for the next generation of graphics engineers.
+
+## Contact
+
+If you have any questions, suggestions, or want to share your projects built with `{{ github.repo.repo }}`, we
+would love to hear from you! You can reach out to us through the following channels:
+
+- **GitHub Discussions**: [Join the Conversation]({{ urls.discussions }})
+- **Email**:
+{{#each mails.organization }}
+  - {{ toPascalCase @key }}: <mailto:{{ this }}>
+{{/each}}
+- **Social Media**:
+{{#each socials }}
+  - [**{{ lookup ../keymap @key }}**]({{ this }})
+{{/each}}
+
+---
+© 2026 Graphical Playground. Built for the next generation of graphics engineers.
+
+![Graphical Playground]({{ urls.cdn }}/assets/misc/gplayd-footer.svg)

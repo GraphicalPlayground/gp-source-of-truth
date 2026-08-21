@@ -1,0 +1,105 @@
+![Graphical Playground - Engine]({{ urls.cdn }}/assets/banners/{{ github.repo.repo }}.svg)
+
+[![Explorer la Plateforme]({{ urls.cdn }}/assets/cta/cta-explore-platform.svg)]({{ urls.homepage }})
+[![Lire le Manuel]({{ urls.cdn }}/assets/cta/cta-read-handbook.svg)]({{ urls.handbook }})
+[![Documentation]({{ urls.cdn }}/assets/cta/cta-documentation.svg)]({{ urls.documentation }})
+[![En savoir plus sur les Licences]({{ urls.cdn }}/assets/cta/cta-learn-licensing.svg)]({{ urls.licensing }})
+
+# [@GraphicalPlayground](https://github.com/GraphicalPlayground)/{{ github.repo.repo }}
+
+{{ i18n.alternatives }}
+
+{{{ customContent }}}
+
+## Contribuer
+
+Nous accueillons les contributions de tous ! Que vous corrigiez un bug, implémentiez de nouvelles fonctionnalités ou amélioriez notre documentation, votre aide est appréciée. Consultez notre guide complet [CONTRIBUTING.md](./CONTRIBUTING.md) pour des informations détaillées sur nos standards et le processus de revue des pull requests.
+
+### Code de Conduite
+
+Pour garantir un environnement accueillant, collaboratif et inclusif pour tous ceux qui apprennent et construisent au sein de l'écosystème Graphical Playground, tous les contributeurs et participants sont tenus de respecter notre [Code de Conduite](./CODE_OF_CONDUCT.md). Veuillez le consulter avant de participer à des discussions communautaires ou de soumettre du code.
+
+### Sécurité
+
+Si vous découvrez une vulnérabilité de sécurité dans `{{ github.repo.repo }}`, veuillez ne pas la signaler en ouvrant un issue public. Référez-vous plutôt à notre [Politique de Sécurité](./SECURITY.md) pour obtenir des instructions sur la manière de divulguer la vulnérabilité de manière sécurisée aux mainteneurs.
+
+### Licence
+
+`{{ github.repo.repo }}` est un logiciel open-source. Veuillez consulter le fichier [LICENSE.md](../../LICENSE.md) dans le répertoire racine pour les termes complets concernant la modification, la distribution et l'utilisation dans vos propres projets.
+
+### Dons
+
+Si vous trouvez `{{ github.repo.repo }}` utile pour votre apprentissage, votre recherche académique ou votre parcours dans le développement de jeux, pensez à soutenir le projet. Maintenir un moteur graphique C++ moderne demande un temps et des ressources considérables !
+
+Vous pouvez parrainer le projet Graphical Playground via les liens suivants :
+
+{{#if funding.buy_me_a_coffee }}
+- [**Buy Me A Coffee**](https://www.buymeacoffee.com/{{ funding.buy_me_a_coffee }})
+{{/if}}
+{{#if funding.github }}
+  {{#if (isArray funding.github) }}
+- **GitHub Sponsors**:
+    {{#each funding.github }}
+  - [**{{ this }}**](https://github.com/sponsors/{{ this }})
+    {{/each}}
+  {{else}}
+- [**GitHub Sponsors**](https://github.com/sponsors/{{ funding.github }})
+  {{/if}}
+{{/if}}
+{{#if funding.open_collective}}
+- [**Open Collective**](https://opencollective.com/{{ funding.open_collective }})
+{{/if}}
+{{#if funding.thanks_dev }}
+- [**Thanks Dev**](https://thanks.dev/{{ funding.thanks_dev }})
+{{/if}}
+{{#if funding.patreon }}
+- [**Patreon**](https://www.patreon.com/{{ funding.patreon }})
+{{/if}}
+{{#if funding.ko_fi }}
+- [**Ko-fi**](https://ko-fi.com/{{ funding.ko_fi }})
+{{/if}}
+{{#if funding.issuehunt }}
+- [**IssueHunt**](https://issuehunt.io/r/{{ funding.issuehunt }})
+{{/if}}
+{{#if funding.liberapay }}
+- [**Liberapay**](https://liberapay.com/{{ funding.liberapay }})
+{{/if}}
+{{#if funding.tidelift }}
+- [**Tidelift**](https://tidelift.com/subscription/pkg/npm-{{ funding.tidelift }})
+{{/if}}
+{{#if funding.polar }}
+- [**Polar**](https://polar.sh/{{ funding.polar }})
+{{/if}}
+{{#if funding.custom }}
+  {{#if (isArray funding.custom) }}
+- **{{ i18n.localization.direct-donation }}**:
+    {{#each funding.custom }}
+  - [**{{ this }}**]({{ this }})
+    {{/each}}
+  {{else}}
+- [**{{ i18n.localization.direct-donation }}**]({{ funding.custom }})
+  {{/if}}
+{{/if}}
+
+Vous pouvez consulter la liste complète des sponsors et supporters sur notre
+[Page des Sponsors]({{ urls.sponsors }}) ou dans [DONORS.md](../../DONORS.md).
+Votre soutien nous aide à continuer à développer des ressources éducatives de haute qualité et à maintenir le moteur pour la prochaine génération d'ingénieurs graphiques.
+
+## Contact
+
+Si vous avez des questions, des suggestions ou souhaitez partager vos projets réalisés avec `{{ github.repo.repo }}`, nous serions ravis de vous entendre ! Vous pouvez nous contacter via les canaux suivants :
+
+- **GitHub Discussions** : [Rejoindre la Conversation]({{ urls.discussions }})
+- **E-mail** :
+{{#each mails.organization }}
+  - {{ toPascalCase @key }}: <mailto:{{ this }}>
+{{/each}}
+- **Réseaux Sociaux** :
+{{#each socials }}
+  - [**{{ lookup ../keymap @key }}**]({{ this }})
+{{/each}}
+
+---
+© 2026 Graphical Playground. Conçu pour la prochaine génération d'ingénieurs graphiques.
+
+![Graphical Playground]({{ urls.cdn }}/assets/misc/gplayd-footer.svg)

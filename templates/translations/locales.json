@@ -1,18 +1,30 @@
 {
   "en": {
     "name": "English",
-    "label": "🌎 Read this in:"
+    "label": "🌎 Read this in:",
+    "localization": {
+      "direct-donation": "Direct donation"
+    }
   },
   "es": {
     "name": "Español",
-    "label": "🌎 Leer en:"
+    "label": "🌎 Leer en:",
+    "localization": {
+      "direct-donation": "Donación directa"
+    }
   },
   "fr": {
     "name": "Français",
-    "label": "🌎 Lire en :"
+    "label": "🌎 Lire en :",
+    "localization": {
+      "direct-donation": "Don direct"
+    }
   },
   "zh-cn": {
     "name": "简体中文",
-    "label": "🌎 阅读语言："
+    "label": "🌎 阅读语言：",
+    "localization": {
+      "direct-donation": "直接捐赠"
+    }
   }
 }

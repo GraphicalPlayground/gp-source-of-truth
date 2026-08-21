@@ -1,0 +1,104 @@
+![Graphical Playground - Engine]({{ urls.cdn }}/assets/banners/{{ github.repo.repo }}.svg)
+
+[![探索平台]({{ urls.cdn }}/assets/cta/cta-explore-platform.svg)]({{ urls.homepage }})
+[![阅读手册]({{ urls.cdn }}/assets/cta/cta-read-handbook.svg)]({{ urls.handbook }})
+[![文档]({{ urls.cdn }}/assets/cta/cta-documentation.svg)]({{ urls.documentation }})
+[![了解许可证]({{ urls.cdn }}/assets/cta/cta-learn-licensing.svg)]({{ urls.licensing }})
+
+# [@GraphicalPlayground](https://github.com/GraphicalPlayground)/{{ github.repo.repo }}
+
+{{ i18n.alternatives }}
+
+{{{ customContent }}}
+
+## 贡献
+
+我们欢迎所有人的贡献！无论你是在修复 bug、实现新功能还是改进我们的文档，你的帮助都备受感激。请查阅我们完整的 [CONTRIBUTING.md](./CONTRIBUTING.md) 指南，了解我们的标准和 pull request 审查流程的详细信息。
+
+### 行为准则
+
+为了确保所有在 Graphical Playground 生态系统中学习和构建的人都能拥有一个友好、协作且包容的环境，所有贡献者和参与者都必须遵守我们的[行为准则](./CODE_OF_CONDUCT.md)。在参与社区讨论或提交代码之前，请先阅读它。
+
+### 安全
+
+如果你在 `{{ github.repo.repo }}` 中发现安全漏洞，请不要通过开 public issue 的方式报告。请参阅我们的[安全政策](./SECURITY.md)，获取如何安全地向维护者披露漏洞的说明。
+
+### 许可证
+
+`{{ github.repo.repo }}` 是开源软件。请查阅根目录中的 [LICENSE.md](../../LICENSE.md) 文件，了解有关修改、分发和在你自己项目中使用的完整条款。
+
+### 捐赠
+
+如果你发现 `{{ github.repo.repo }}` 对你的学习、学术研究或游戏开发之旅有所帮助，欢迎考虑支持本项目。维护一个现代 C++ 图形引擎需要大量的时间和资源！
+
+你可以通过以下链接赞助 Graphical Playground 项目：
+
+{{#if funding.buy_me_a_coffee }}
+- [**Buy Me A Coffee**](https://www.buymeacoffee.com/{{ funding.buy_me_a_coffee }})
+{{/if}}
+{{#if funding.github }}
+  {{#if (isArray funding.github) }}
+- **GitHub Sponsors**:
+    {{#each funding.github }}
+  - [**{{ this }}**](https://github.com/sponsors/{{ this }})
+    {{/each}}
+  {{else}}
+- [**GitHub Sponsors**](https://github.com/sponsors/{{ funding.github }})
+  {{/if}}
+{{/if}}
+{{#if funding.open_collective}}
+- [**Open Collective**](https://opencollective.com/{{ funding.open_collective }})
+{{/if}}
+{{#if funding.thanks_dev }}
+- [**Thanks Dev**](https://thanks.dev/{{ funding.thanks_dev }})
+{{/if}}
+{{#if funding.patreon }}
+- [**Patreon**](https://www.patreon.com/{{ funding.patreon }})
+{{/if}}
+{{#if funding.ko_fi }}
+- [**Ko-fi**](https://ko-fi.com/{{ funding.ko_fi }})
+{{/if}}
+{{#if funding.issuehunt }}
+- [**IssueHunt**](https://issuehunt.io/r/{{ funding.issuehunt }})
+{{/if}}
+{{#if funding.liberapay }}
+- [**Liberapay**](https://liberapay.com/{{ funding.liberapay }})
+{{/if}}
+{{#if funding.tidelift }}
+- [**Tidelift**](https://tidelift.com/subscription/pkg/npm-{{ funding.tidelift }})
+{{/if}}
+{{#if funding.polar }}
+- [**Polar**](https://polar.sh/{{ funding.polar }})
+{{/if}}
+{{#if funding.custom }}
+  {{#if (isArray funding.custom) }}
+- **{{ i18n.localization.direct-donation }}**:
+    {{#each funding.custom }}
+  - [**{{ this }}**]({{ this }})
+    {{/each}}
+  {{else}}
+- [**{{ i18n.localization.direct-donation }}**]({{ funding.custom }})
+  {{/if}}
+{{/if}}
+
+你可以在我们的[赞助者页面]({{ urls.sponsors }})或 [DONORS.md](../../DONORS.md) 中查看完整的赞助者和支持者名单。
+你的支持帮助我们继续开发高质量的教育资源，并为下一代图形工程师维护引擎。
+
+## 联系
+
+如果你有任何问题、建议，或想分享使用 `{{ github.repo.repo }}` 构建的项目，我们非常乐意听到你的声音！你可以通过以下渠道联系我们：
+
+- **GitHub Discussions**：[加入讨论]({{ urls.discussions }})
+- **电子邮件**：
+{{#each mails.organization }}
+  - {{ toPascalCase @key }}: <mailto:{{ this }}>
+{{/each}}
+- **社交媒体**：
+{{#each socials }}
+  - [**{{ lookup ../keymap @key }}**]({{ this }})
+{{/each}}
+
+---
+© 2026 Graphical Playground. 为下一代图形工程师而生。
+
+![Graphical Playground]({{ urls.cdn }}/assets/misc/gplayd-footer.svg)
