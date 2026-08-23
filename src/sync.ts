@@ -107,7 +107,7 @@ export function buildOutputFiles(
   }
 
   const licenseTemplatePath = path.join(LICENSES_DIR, `${parameters.license}.hbs`);
-  output['LICENSE'] = render(licenseTemplatePath, 'LICENSE', targetDir, context);
+  output['LICENSE.md'] = render(licenseTemplatePath, 'LICENSE.md', targetDir, context);
 
   for (const name of LOCALIZED_TEMPLATE_NAMES) {
     if (!isEnabled(name)) {
