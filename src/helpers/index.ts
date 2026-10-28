@@ -5,6 +5,7 @@
 import { simplifyUrl } from './simplify-url';
 import { toLowerCase, toUpperCase, toKebabCase, toSnakeCase, toPascalCase } from './string-cases';
 import { eq, ne, and, or, not, isArray } from './booleans';
+import { github } from './github';
 import Handlebars from 'handlebars';
 
 /**
@@ -22,10 +23,25 @@ export const helpers: Record<string, Handlebars.HelperDelegate> = {
   and,
   or,
   not,
-  isArray
+  isArray,
+  github
 } as const;
 
 /**
  * @brief Exports the helper functions for use in other modules.
  */
-export { simplifyUrl, toLowerCase, toUpperCase, toKebabCase, toSnakeCase, toPascalCase, eq, ne, and, or, not, isArray };
+export {
+  simplifyUrl,
+  toLowerCase,
+  toUpperCase,
+  toKebabCase,
+  toSnakeCase,
+  toPascalCase,
+  eq,
+  ne,
+  and,
+  or,
+  not,
+  isArray,
+  github
+};
