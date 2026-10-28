@@ -5,5 +5,5 @@
 import Handlebars from 'handlebars';
 
 export const github: Handlebars.HelperDelegate = (input: unknown): string => {
-  return new Handlebars.SafeString('${{' + input + '}}');
+  return new Handlebars.SafeString('${{ ' + input + ' }}');
 };
